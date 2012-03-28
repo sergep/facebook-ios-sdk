@@ -326,9 +326,15 @@ static void *finishedContext = @"finishedContext";
  *            the user has logged in.
  */
 - (void)authorize:(NSArray *)permissions {
+    [self authorizeWithFBAppAuth:YES safariAuth:YES permissions: permissions];
+}
+
+- (void)authorizeWithFBAppAuth:(BOOL)tryFBAppAuth
+                    safariAuth:(BOOL)trySafariAuth
+                   permissions:(NSArray*) permissions {
     self.permissions = permissions;
-    
-    [self authorizeWithFBAppAuth:YES safariAuth:YES];
+
+    [self authorizeWithFBAppAuth: tryFBAppAuth safariAuth: trySafariAuth];
 }
 
 /**

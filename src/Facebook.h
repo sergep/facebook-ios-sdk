@@ -63,6 +63,10 @@
 
 - (BOOL)shouldExtendAccessToken;
 
+- (void)authorizeWithFBAppAuth:(BOOL)tryFBAppAuth
+                    safariAuth:(BOOL)trySafariAuth
+                   permissions:(NSArray*) permissions;
+
 - (BOOL)handleOpenURL:(NSURL *)url;
 
 - (void)logout;
